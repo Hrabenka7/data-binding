@@ -1,0 +1,9 @@
+<h3 appBasicHighlight> List of Conrad's favourite Pokemons </h3>
+<app-child-component *ngFor="let pokemon of pokemons" [pokemonParent]="pokemon" (evolved)="onEvolved($event)">
+  <span #ngContentReference>
+    <p *ngIf="pokemon.type === 'grass'">{{pokemon.name}} has Chlorophyll as a hidden ability</p>
+    <p *ngIf="pokemon.type === 'fire'">{{pokemon.name}} has Solar Power as a hidden ability</p>
+    <p *ngIf="pokemon.type === 'water'">{{pokemon.name}} has Rain Dish as a hidden ability</p>
+  </span>
+</app-child-component>
+

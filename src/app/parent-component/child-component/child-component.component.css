@@ -1,0 +1,17 @@
+.single-pokemon {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 10px;
+}
+
+.grassType button {
+  background-color: green; 
+}
+
+.fireType button {
+  background-color: red;
+}
+
+.waterType button {
+  background-color: lightskyblue;
+}
