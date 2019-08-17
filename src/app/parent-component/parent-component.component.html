@@ -1,9 +1,20 @@
 <h3 appBasicHighlight> List of Conrad's favourite Pokemons </h3>
 <app-child-component *ngFor="let pokemon of pokemons" [pokemonParent]="pokemon" (evolved)="onEvolved($event)">
   <span #ngContentReference>
-    <p *ngIf="pokemon.type === 'grass'">{{pokemon.name}} has Chlorophyll as a hidden ability</p>
-    <p *ngIf="pokemon.type === 'fire'">{{pokemon.name}} has Solar Power as a hidden ability</p>
-    <p *ngIf="pokemon.type === 'water'">{{pokemon.name}} has Rain Dish as a hidden ability</p>
+    <p appCustomPropertyBinding [defaultColor]="'transparent'" [highlightColor]="'green'" *ngIf="pokemon.type === 'grass'">{{pokemon.name}} has Chlorophyll as a hidden ability</p>
+    <p appCustomPropertyBinding [defaultColor]="'transparent'" [highlightColor]="'red'"*ngIf="pokemon.type === 'fire'">{{pokemon.name}} has Solar Power as a hidden ability</p>
+    <p appCustomPropertyBinding [defaultColor]="'transparent'" [highlightColor]="'lightskyblue'"*ngIf="pokemon.type === 'water'">{{pokemon.name}} has Rain Dish as a hidden ability</p>
   </span>
+
+  <!-- Alternative with ngSwitch
+  <span #ngContentReference>
+    <span [ngSwitch]="pokemon.type">
+      <p *ngSwitchCase="'grass'" appCustomPropertyBinding [defaultColor]="'transparent'" [highlightColor]="'green'">{{pokemon.name}} has Chlorophyll as a hidden ability</p>
+      <p *ngSwitchCase="'fire'" appCustomPropertyBinding [defaultColor]="'transparent'" [highlightColor]="'red'">{{pokemon.name}} has Solar Power as a hidden ability</p>
+      <p *ngSwitchCase="'water'" appCustomPropertyBinding [defaultColor]="'transparent'" [highlightColor]="'lightskyblue'">{{pokemon.name}} has Rain Dish as a hidden ability</p>
+      <p *ngSwitchDefault>{{pokemon.name}} has no hidden ability</p>
+    </span>
+  </span> -->
+
 </app-child-component>
 

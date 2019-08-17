@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponentComponent implements OnInit {
 
-  pokemons: Array<any> = [{ name: 'Bulbasaur', type: 'grass'}, { name: 'Charmander', type: 'fire'}, { name: 'Squirtle', type: 'water'}];
-  level2: Array<any> = [{ name: 'Ivysaur', type: 'grass' }, { name: 'Charmeleon', type: 'fire' }, { name: 'Wartortle', type: 'water' }];
-  level3: Array<any> = [{ name: 'Venusaur', type: 'grass' }, { name: 'Charizard', type: 'fire' }, { name: 'Blastoise', type: 'water' }];
+  pokemons: Array<any> = [{ name: 'Bulbasaur', type: 'grass', evolve: true }, { name: 'Charmander', type: 'fire', evolve: true },
+   { name: 'Squirtle', type: 'water', evolve: true }, ];
+  level2: Array<any> = [{ name: 'Ivysaur', type: 'grass', evolve: true }, { name: 'Charmeleon', type: 'fire', evolve: true },
+    { name: 'Wartortle', type: 'water', evolve: true }];
+  level3: Array<any> = [{ name: 'Venusaur', type: 'grass', evolve: false }, { name: 'Charizard', type: 'fire', evolve: false  },
+   { name: 'Blastoise', type: 'water', evolve: false }];
 
   constructor() { }
 

@@ -1,6 +1,6 @@
 <div class="single-pokemon">
   <p>Name: {{pokemonElement.name}}</p>
-  <button (click)="evolve(pokemonElement.name)">Evolve</button>
+  <button (click)="evolve(pokemonElement.name)" *appUnless="pokemonElement.evolve === false">Evolve</button>
   <div>
     <input type="text" class="form-control" #attackReference>
     <button (click)="onAttack(attackReference)">Attack!</button>
